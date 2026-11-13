@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Lenis from 'lenis'
 import { Navbar } from './components/Navbar.jsx'
 import SwarmCursor from './components/SwarmCursor.jsx'
@@ -11,6 +11,7 @@ import Contact from './components/Contact.jsx'
 
 export default function App() {
   const [finePointer, setFinePointer] = useState(false)
+  const lenisRef = useRef(null)
 
   useEffect(() => {
     const mq = window.matchMedia('(pointer: fine)')
@@ -26,6 +27,7 @@ export default function App() {
     let raf
     try {
       lenis = new Lenis({ lerp: 0.09 })
+      lenisRef.current = lenis
       const loop = (t) => {
         lenis.raf(t)
         raf = requestAnimationFrame(loop)
@@ -51,8 +53,21 @@ export default function App() {
     return () => {
       if (raf) cancelAnimationFrame(raf)
       if (lenis) lenis.destroy()
+      lenisRef.current = null
       document.removeEventListener('click', onClick)
     }
+  }, [])
+
+  // 详情弹窗打开时冻结平滑滚动，关闭后恢复
+  useEffect(() => {
+    const onModal = (e) => {
+      const l = lenisRef.current
+      if (!l) return
+      if (e.detail?.open) l.stop()
+      else l.start()
+    }
+    window.addEventListener('mushan:modal', onModal)
+    return () => window.removeEventListener('mushan:modal', onModal)
   }, [])
 
   return (

@@ -78,6 +78,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  animation: modalImgIn 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes modalImgIn {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: none; }
 }
 .modal-nav {
   position: absolute;
@@ -416,4 +421,14 @@
   .modal { cursor: pointer; }
   .modal-panel { cursor: default; }
   .modal button, .modal a, .modal .thumb { cursor: pointer; }
+}
+
+/* ============ 滚轮切图提示（桌面 / 手机各显示一条） ============ */
+.hint-mobile { display: none; }
+@media (max-width: 768px) {
+  .hint-desktop { display: none; }
+  .hint-mobile { display: inline; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal-main { animation: none; }
 }

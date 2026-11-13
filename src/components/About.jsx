@@ -1,4 +1,4 @@
-import { team, stats, contact } from '../data.js'
+import { team, stats, contact, smallOf } from '../data.js'
 import useReveal from '../useReveal.js'
 import { CountUp, SplitText } from './SplitText.jsx'
 
@@ -48,7 +48,7 @@ export default function About() {
             {team.map((m) => (
               <div className="member" key={m.name}>
                 <div className="member-photo">
-                  <img src={m.avatar} alt={`${m.name} ${m.roleCn}`} loading="lazy" />
+                  <img src={smallOf(m.avatar)} alt={`${m.name} ${m.roleCn}`} loading="lazy" decoding="async" />
                 </div>
                 <div className="member-info">
                   <div className="member-name">

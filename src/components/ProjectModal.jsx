@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import galleryMap from '../gallery.json'
+import { smallOf, srcSetOf } from '../data.js'
 
 const WHEEL_THRESHOLD = 24  // 累积多少 deltaY 触发一次切换
 const GESTURE_GAP = 300     // 间隔超过这个毫秒数视为新手势
@@ -91,8 +92,16 @@ export default function ProjectModal({ project, onClose }) {
         <button className="modal-close" onClick={onClose} aria-label="关闭">✕</button>
 
         <div className="modal-media">
-          <div className="modal-blur" style={{ backgroundImage: `url("${images[active]}")` }} aria-hidden="true" />
-          <img key={active} className="modal-main" src={images[active]} alt={project.title} />
+          <div className="modal-blur" style={{ backgroundImage: `url("${smallOf(images[active])}")` }} aria-hidden="true" />
+          <img
+            key={active}
+            className="modal-main"
+            src={images[active]}
+            srcSet={srcSetOf(images[active])}
+            sizes="(max-width: 768px) 100vw, 1200px"
+            alt={project.title}
+            decoding="async"
+          />
           {images.length > 1 && (
             <>
               <button className="modal-nav prev" onClick={() => setActive((a) => (a - 1 + images.length) % images.length)} aria-label="上一张">←</button>
@@ -107,7 +116,7 @@ export default function ProjectModal({ project, onClose }) {
                 onClick={() => setActive(i)}
                 aria-label={`第 ${i + 1} 张`}
               >
-                <img src={img} alt="" loading="lazy" />
+                <img src={smallOf(img)} alt="" loading="lazy" decoding="async" />
               </button>
             ))}
           </div>

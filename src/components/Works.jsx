@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { projects, extraProjects } from '../data.js'
+import { projects, extraProjects, srcSetOf } from '../data.js'
 import useReveal from '../useReveal.js'
 import ProjectModal from './ProjectModal.jsx'
 
@@ -18,7 +18,14 @@ function WorkCard({ p, delay, onOpen }) {
       <div className="work-media">
         <span className="work-index">{p.index}</span>
         <span className="work-tag">{p.tagEn}</span>
-        <img src={p.img} alt={p.title} loading="lazy" />
+        <img
+          src={p.img}
+          srcSet={srcSetOf(p.img)}
+          sizes="(max-width: 768px) 100vw, 1200px"
+          alt={p.title}
+          loading="lazy"
+          decoding="async"
+        />
         <span className="work-hint">查看案例 ↗</span>
       </div>
       <div className="work-body">

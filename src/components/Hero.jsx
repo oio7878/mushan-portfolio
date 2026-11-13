@@ -28,25 +28,25 @@ export default function Hero() {
     <section className="hero" id="top">
       <div className="hero-bg">
         <FaultyTerminal
-          tint="#ff4655"
+          tint="#a8504a"
           glyphs="blocks"
-          scale={isMobile ? 1.0 : 1.3}
-          digitSize={1.4}
-          timeScale={0.4}
-          brightness={0.85}
-          glow={0.6}
-          persistence={0.55}
-          curvature={0.12}
-          vignette={0.5}
-          scanlineIntensity={0.28}
-          glitchAmount={1.15}
-          flickerAmount={1.1}
-          noiseAmp={1.1}
-          chromaticAberration={2.5}
-          dither={1}
-          mouseStrength={0.3}
-          mouseGlow={0.6}
-          clickEffect="glitch"
+          scale={isMobile ? 1.6 : 2.0}
+          digitSize={1.5}
+          timeScale={0.12}
+          brightness={0.24}
+          glow={0.16}
+          persistence={0.72}
+          curvature={0.05}
+          vignette={0.72}
+          scanlineIntensity={0.08}
+          glitchAmount={0.12}
+          flickerAmount={0.08}
+          noiseAmp={0.6}
+          chromaticAberration={0}
+          dither={0.4}
+          mouseStrength={0.14}
+          mouseGlow={0.22}
+          clickEffect="none"
         />
       </div>
       <div className="hero-overlay" />
@@ -62,7 +62,7 @@ export default function Hero() {
             <SplitText text="设计驱动" />
           </span>
           <span className="row2 ht-line">
-            <SplitText text="品牌想象" className="accent" delay={0.28} />
+            <SplitText text="品牌想象" className="soft" delay={0.28} />
             <span className="outline mono">EST. 2026</span>
           </span>
         </h1>

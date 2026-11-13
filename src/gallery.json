@@ -1,143 +1,143 @@
 {
 "tiangong": [
-"assets/gallery/tiangong_1.jpg",
-"assets/gallery/tiangong_2.jpg",
-"assets/gallery/tiangong_3.jpg",
-"assets/gallery/tiangong_4.jpg"
+"assets/gallery/tiangong_1.webp",
+"assets/gallery/tiangong_2.webp",
+"assets/gallery/tiangong_3.webp",
+"assets/gallery/tiangong_4.webp"
 ],
 "wukong": [
-"assets/gallery/wukong_1.jpg",
-"assets/gallery/wukong_2.jpg",
-"assets/gallery/wukong_3.jpg"
+"assets/gallery/wukong_1.webp",
+"assets/gallery/wukong_2.webp",
+"assets/gallery/wukong_3.webp"
 ],
 "bosideng": [
-"assets/gallery/bosideng_1.jpg",
-"assets/gallery/bosideng_2.jpg",
-"assets/gallery/bosideng_3.jpg",
-"assets/gallery/bosideng_4.jpg"
+"assets/gallery/bosideng_1.webp",
+"assets/gallery/bosideng_2.webp",
+"assets/gallery/bosideng_3.webp",
+"assets/gallery/bosideng_4.webp"
 ],
 "nfc": [
-"assets/gallery/nfc_1.jpg",
-"assets/gallery/nfc_2.jpg",
-"assets/gallery/nfc_3.jpg",
-"assets/gallery/nfc_4.jpg"
+"assets/gallery/nfc_1.webp",
+"assets/gallery/nfc_2.webp",
+"assets/gallery/nfc_3.webp",
+"assets/gallery/nfc_4.webp"
 ],
 "dianji": [
-"assets/gallery/dianji_1.jpg",
-"assets/gallery/dianji_2.jpg",
-"assets/gallery/dianji_3.jpg",
-"assets/gallery/dianji_4.jpg"
+"assets/gallery/dianji_1.webp",
+"assets/gallery/dianji_2.webp",
+"assets/gallery/dianji_3.webp",
+"assets/gallery/dianji_4.webp"
 ],
 "quechao": [
-"assets/gallery/quechao_1.jpg",
-"assets/gallery/quechao_2.jpg",
-"assets/gallery/quechao_3.jpg",
-"assets/gallery/quechao_4.jpg"
+"assets/gallery/quechao_1.webp",
+"assets/gallery/quechao_2.webp",
+"assets/gallery/quechao_3.webp",
+"assets/gallery/quechao_4.webp"
 ],
 "qianfen": [
-"assets/gallery/qianfen_1.jpg",
-"assets/gallery/qianfen_2.jpg",
-"assets/gallery/qianfen_3.jpg",
-"assets/gallery/qianfen_4.jpg"
+"assets/gallery/qianfen_1.webp",
+"assets/gallery/qianfen_2.webp",
+"assets/gallery/qianfen_3.webp",
+"assets/gallery/qianfen_4.webp"
 ],
 "fenxianjia": [
-"assets/gallery/fenxianjia_1.jpg",
-"assets/gallery/fenxianjia_2.jpg",
-"assets/gallery/fenxianjia_3.jpg",
-"assets/gallery/fenxianjia_4.jpg",
-"assets/gallery/fenxianjia_5.jpg"
+"assets/gallery/fenxianjia_1.webp",
+"assets/gallery/fenxianjia_2.webp",
+"assets/gallery/fenxianjia_3.webp",
+"assets/gallery/fenxianjia_4.webp",
+"assets/gallery/fenxianjia_5.webp"
 ],
 "cdf": [
-"assets/gallery/cdf_1.jpg",
-"assets/gallery/cdf_2.jpg",
-"assets/gallery/cdf_3.jpg",
-"assets/gallery/cdf_4.jpg"
+"assets/gallery/cdf_1.webp",
+"assets/gallery/cdf_2.webp",
+"assets/gallery/cdf_3.webp",
+"assets/gallery/cdf_4.webp"
 ],
 "cgtn": [
-"assets/gallery/cgtn_1.jpg",
-"assets/gallery/cgtn_2.jpg",
-"assets/gallery/cgtn_3.jpg",
-"assets/gallery/cgtn_4.jpg"
+"assets/gallery/cgtn_1.webp",
+"assets/gallery/cgtn_2.webp",
+"assets/gallery/cgtn_3.webp",
+"assets/gallery/cgtn_4.webp"
 ],
 "jdsc": [
-"assets/gallery/jdsc_1.jpg"
+"assets/gallery/jdsc_1.webp"
 ],
 "swisse": [
-"assets/gallery/swisse_1.jpg"
+"assets/gallery/swisse_1.webp"
 ],
 "cuicuisha": [
-"assets/gallery/cuicuisha_1.jpg",
-"assets/gallery/cuicuisha_2.jpg",
-"assets/gallery/cuicuisha_3.jpg"
+"assets/gallery/cuicuisha_1.webp",
+"assets/gallery/cuicuisha_2.webp",
+"assets/gallery/cuicuisha_3.webp"
 ],
 "shakeneng": [
-"assets/gallery/shakeneng_1.jpg",
-"assets/gallery/shakeneng_2.jpg",
-"assets/gallery/shakeneng_3.jpg"
+"assets/gallery/shakeneng_1.webp",
+"assets/gallery/shakeneng_2.webp",
+"assets/gallery/shakeneng_3.webp"
 ],
 "yikoucui": [
-"assets/gallery/yikoucui_1.jpg",
-"assets/gallery/yikoucui_2.jpg",
-"assets/gallery/yikoucui_3.jpg"
+"assets/gallery/yikoucui_1.webp",
+"assets/gallery/yikoucui_2.webp",
+"assets/gallery/yikoucui_3.webp"
 ],
 "core": [
-"assets/gallery/core_1.jpg",
-"assets/gallery/core_2.jpg",
-"assets/gallery/core_3.jpg"
+"assets/gallery/core_1.webp",
+"assets/gallery/core_2.webp",
+"assets/gallery/core_3.webp"
 ],
 "congyi": [
-"assets/gallery/congyi_1.jpg",
-"assets/gallery/congyi_2.jpg",
-"assets/gallery/congyi_3.jpg",
-"assets/gallery/congyi_4.jpg",
-"assets/gallery/congyi_5.jpg",
-"assets/gallery/congyi_6.jpg"
+"assets/gallery/congyi_1.webp",
+"assets/gallery/congyi_2.webp",
+"assets/gallery/congyi_3.webp",
+"assets/gallery/congyi_4.webp",
+"assets/gallery/congyi_5.webp",
+"assets/gallery/congyi_6.webp"
 ],
 "goldwind": [
-"assets/gallery/goldwind_1.jpg",
-"assets/gallery/goldwind_2.jpg",
-"assets/gallery/goldwind_3.jpg",
-"assets/gallery/goldwind_4.jpg",
-"assets/gallery/goldwind_5.jpg"
+"assets/gallery/goldwind_1.webp",
+"assets/gallery/goldwind_2.webp",
+"assets/gallery/goldwind_3.webp",
+"assets/gallery/goldwind_4.webp",
+"assets/gallery/goldwind_5.webp"
 ],
 "z-iliwang": [
-"assets/gallery/z-iliwang_1.jpg",
-"assets/gallery/z-iliwang_2.jpg",
-"assets/gallery/z-iliwang_3.jpg"
+"assets/gallery/z-iliwang_1.webp",
+"assets/gallery/z-iliwang_2.webp",
+"assets/gallery/z-iliwang_3.webp"
 ],
 "z-mmqx": [
-"assets/gallery/z-mmqx_1.jpg",
-"assets/gallery/z-mmqx_2.jpg",
-"assets/gallery/z-mmqx_3.jpg"
+"assets/gallery/z-mmqx_1.webp",
+"assets/gallery/z-mmqx_2.webp",
+"assets/gallery/z-mmqx_3.webp"
 ],
 "z-xwsk": [
-"assets/gallery/z-xwsk_1.jpg",
-"assets/gallery/z-xwsk_2.jpg",
-"assets/gallery/z-xwsk_3.jpg"
+"assets/gallery/z-xwsk_1.webp",
+"assets/gallery/z-xwsk_2.webp",
+"assets/gallery/z-xwsk_3.webp"
 ],
 "z-milk": [
-"assets/gallery/z-milk_1.jpg",
-"assets/gallery/z-milk_2.jpg",
-"assets/gallery/z-milk_3.jpg"
+"assets/gallery/z-milk_1.webp",
+"assets/gallery/z-milk_2.webp",
+"assets/gallery/z-milk_3.webp"
 ],
 "z-rifen": [
-"assets/gallery/z-rifen_1.jpg",
-"assets/gallery/z-rifen_2.jpg",
-"assets/gallery/z-rifen_3.jpg"
+"assets/gallery/z-rifen_1.webp",
+"assets/gallery/z-rifen_2.webp",
+"assets/gallery/z-rifen_3.webp"
 ],
 "z-poster": [
-"assets/gallery/z-poster_1.jpg",
-"assets/gallery/z-poster_2.jpg",
-"assets/gallery/z-poster_3.jpg"
+"assets/gallery/z-poster_1.webp",
+"assets/gallery/z-poster_2.webp",
+"assets/gallery/z-poster_3.webp"
 ],
 "z-sport": [
-"assets/gallery/z-sport_1.jpg",
-"assets/gallery/z-sport_2.jpg",
-"assets/gallery/z-sport_3.jpg"
+"assets/gallery/z-sport_1.webp",
+"assets/gallery/z-sport_2.webp",
+"assets/gallery/z-sport_3.webp"
 ],
 "z-tea": [
-"assets/gallery/z-tea_1.jpg",
-"assets/gallery/z-tea_2.jpg",
-"assets/gallery/z-tea_3.jpg"
+"assets/gallery/z-tea_1.webp",
+"assets/gallery/z-tea_2.webp",
+"assets/gallery/z-tea_3.webp"
 ]
 }

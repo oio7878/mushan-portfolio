@@ -76,17 +76,17 @@ export default function App() {
       <div className="bg-glow" aria-hidden="true" />
       {finePointer && (
         <SwarmCursor
-          count={600}
-          size={2.2}
-          color="#ff4655"
-          accentColor="#ffffff"
-          spread={78}
-          swirl={0.7}
-          tail={0.55}
-          trail={0.7}
-          depth={0.7}
-          clickEffect="burst"
-          idle="roam"
+          count={220}
+          size={1.6}
+          color="#a05a52"
+          accentColor="#d8c9c2"
+          spread={58}
+          swirl={0.3}
+          tail={0.28}
+          trail={0.3}
+          depth={0.35}
+          clickEffect="none"
+          idle="gather"
           hideCursor
           style={{ position: 'fixed', inset: 0, zIndex: 190, pointerEvents: 'none' }}
         />

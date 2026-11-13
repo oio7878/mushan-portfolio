@@ -1,4 +1,4 @@
-import { logos } from '../data.js'
+import { logos, srcSetOf } from '../data.js'
 import useReveal from '../useReveal.js'
 
 export default function LogoSection() {
@@ -26,7 +26,14 @@ export default function LogoSection() {
           {logos.map((l, i) => (
             <div className="logo-card reveal" key={l.en} style={{ '--d': `${(i % 4) * 0.08}s` }}>
               <div className="logo-img">
-                <img src={l.img} alt={l.name} loading="lazy" />
+                <img
+                  src={l.img}
+                  srcSet={srcSetOf(l.img)}
+                  sizes="(max-width: 768px) 50vw, 400px"
+                  alt={l.name}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="logo-name">
                 <span className="cn">{l.name}</span>

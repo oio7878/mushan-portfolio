@@ -30,7 +30,7 @@ class ErrorBoundary extends React.Component {
           }}
         >
           <div style={{ textAlign: 'center' }}>
-            <div style={{ color: '#ff4655', fontSize: 22, fontWeight: 800, letterSpacing: '0.2em' }}>
+            <div style={{ color: '#b65048', fontSize: 22, fontWeight: 800, letterSpacing: '0.2em' }}>
               MUSHAN DESIGN
             </div>
             <p style={{ marginTop: 14, color: '#a7aeb6' }}>

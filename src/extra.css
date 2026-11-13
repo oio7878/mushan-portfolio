@@ -84,6 +84,8 @@
   from { opacity: 0; transform: scale(1.02); }
   to { opacity: 1; transform: none; }
 }
+/* 移动端图片完整显示时，用同图模糊铺底填充留白（桌面端不需要） */
+.modal-blur { display: none; }
 .modal-nav {
   position: absolute;
   top: 50%;
@@ -383,13 +385,44 @@
     grid-template-columns: 1fr;
     grid-template-rows: minmax(0, 1.05fr) auto;
   }
+  /* 图片按原始比例完整显示，不再被窄屏裁切；留白用同图模糊铺底 */
+  .modal-blur {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(30px) brightness(0.3) saturate(1.15);
+    transform: scale(1.15);
+    pointer-events: none;
+  }
+  .modal-main {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 0;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    padding: 8px 0;
+  }
+  /* 缩略图改为常规排列，不再浮在图片上遮挡内容 */
+  .modal-thumbs {
+    position: static;
+    z-index: 2;
+    padding: 8px;
+    gap: 6px;
+    background: rgba(5, 6, 10, 0.92);
+    border-top: 1px solid var(--line);
+  }
+  .thumb { width: 60px; height: 42px; }
+  .modal-nav { width: 36px; height: 36px; font-size: 15px; }
+  .modal-nav.prev { left: 8px; }
+  .modal-nav.next { right: 8px; }
   .modal-info { padding: 18px 18px 20px; }
   .modal-title { font-size: 22px; margin-top: 12px; }
   .modal-desc { -webkit-line-clamp: 3; font-size: 13px; margin-top: 10px; }
   .modal-tags { margin-top: 14px; }
   .modal-foot { padding-top: 16px; margin-top: 12px; }
-  .modal-thumbs { padding: 8px; gap: 6px; }
-  .thumb { width: 56px; height: 40px; }
   .modal-close { top: 12px; right: 12px; }
 }
 

@@ -91,6 +91,7 @@ export default function ProjectModal({ project, onClose }) {
         <button className="modal-close" onClick={onClose} aria-label="关闭">✕</button>
 
         <div className="modal-media">
+          <div className="modal-blur" style={{ backgroundImage: `url("${images[active]}")` }} aria-hidden="true" />
           <img key={active} className="modal-main" src={images[active]} alt={project.title} />
           {images.length > 1 && (
             <>

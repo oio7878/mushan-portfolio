@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Lenis from 'lenis'
 import { Navbar } from './components/Navbar.jsx'
-import SwarmCursor from './components/SwarmCursor.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import Works from './components/Works.jsx'
@@ -10,16 +9,7 @@ import Strengths from './components/Strengths.jsx'
 import Contact from './components/Contact.jsx'
 
 export default function App() {
-  const [finePointer, setFinePointer] = useState(false)
   const lenisRef = useRef(null)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(pointer: fine)')
-    setFinePointer(mq.matches)
-    const fn = (e) => setFinePointer(e.matches)
-    mq.addEventListener?.('change', fn)
-    return () => mq.removeEventListener?.('change', fn)
-  }, [])
 
   useEffect(() => {
     // 平滑滚动
@@ -72,25 +62,6 @@ export default function App() {
 
   return (
     <>
-      <div className="noise" aria-hidden="true" />
-      <div className="bg-glow" aria-hidden="true" />
-      {finePointer && (
-        <SwarmCursor
-          count={220}
-          size={1.6}
-          color="#a05a52"
-          accentColor="#d8c9c2"
-          spread={58}
-          swirl={0.3}
-          tail={0.28}
-          trail={0.3}
-          depth={0.35}
-          clickEffect="none"
-          idle="gather"
-          hideCursor
-          style={{ position: 'fixed', inset: 0, zIndex: 190, pointerEvents: 'none' }}
-        />
-      )}
       <Navbar />
       <main>
         <Hero />

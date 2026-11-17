@@ -240,20 +240,19 @@ body::before { display: none !important; }
 .section-head p { color: var(--muted); }
 .works-foot { color: var(--dim); }
 
-/* ---------- 卡片：深色玻璃 + 细光边 ---------- */
-.work-card, .member, .cap, .stat, .value, .pstep, .logo-card {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 22px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055), 0 20px 50px rgba(0, 0, 0, 0.42);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+/* ---------- 去卡片化：内容直接坐在黑底上，靠排版与细线呈现 ---------- */
+.work-card, .member, .cap, .stat, .value, .pstep, .logo-card,
+.stats, .process-steps, .values {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
-.work-card:hover, .logo-card:hover {
-  background: rgba(255, 255, 255, 0.055);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 28px 66px rgba(0, 0, 0, 0.58);
-  transform: translateY(-4px);
+.work-card:hover, .logo-card:hover, .member:hover, .cap:hover, .value:hover {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 .work-title, .member-name, .cap-title, .stat .num,
 .value-title, .process-quote, .modal-title { color: var(--text); }
@@ -262,28 +261,53 @@ body::before { display: none !important; }
 .cap-num, .cap-en { color: var(--dim); }
 .cap-list li::before { background: #f5f5f7; opacity: 0.45; }
 .work-tag, .work-index {
-  background: rgba(255, 255, 255, 0.08);
-  color: #d8d8dd;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  backdrop-filter: blur(8px);
+  background: none;
+  color: #8a8a90;
+  border: none;
+  border-radius: 0;
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
 }
-.work-hint { background: #f5f5f7; color: #1d1d1f; border-radius: 999px; }
+.work-hint { background: none; color: #8a8a90; border-radius: 0; }
 .work-arrow { color: var(--text); border-color: var(--line); }
 .member-photo::after, .cap::after, .value::after { background: none; }
-.logo-img { background: rgba(255, 255, 255, 0.05); }
+.logo-img { background: none; }
 .logo-name .cn { color: var(--text); }
 .logo-name .en { color: var(--dim); }
 .contact-row, .about-contact { color: var(--muted); }
-.stats, .process-steps { border-color: var(--line); }
-.stat, .pstep { border-color: var(--line); }
+/* 联系方式块也去卡片化，改成顶部细线 + 纯排版 */
+.about-contact {
+  background: none !important;
+  border: none !important;
+  border-top: 1px solid var(--line) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 26px 0 0 !important;
+  clip-path: none !important;
+}
+.contact-row .k { color: #6e6e73; letter-spacing: 0.12em; font-size: 11px; }
+.contact-row .v { color: #e8e8ed; }
+
+/* 细线分隔：替代原来的卡片边框，只在区块之间保留极细线 */
+.stats { border-top: 1px solid var(--line) !important; border-bottom: 1px solid var(--line) !important; }
+.stat { border-right: 1px solid var(--line) !important; }
+.cap { border-top: 1px solid var(--line) !important; }
+.value { border-top: 1px solid var(--line) !important; }
+
+/* 图片圆角，但不占满：留出呼吸空间 */
+.work-media, .member-photo { border-radius: 8px; overflow: hidden; }
+.work-media img, .member-photo img { border-radius: 8px; }
+.works-grid { gap: 56px 32px; }
+.work-body { padding: 20px 0 0; }
+
+/* 作品标题灰白混排：编号/英文细灰，标题粗白 */
+.work-meta-line, .work-index, .work-tag { font-weight: 400; }
+.work-title { font-weight: 650; letter-spacing: -0.01em; text-transform: none; }
+.member-name { font-weight: 650; text-transform: none; }
 
 /* ---------- 联系收尾页 ---------- */
 .contact {
-  background:
-    radial-gradient(56% 46% at 50% 34%, rgba(122, 96, 224, 0.2) 0%, transparent 70%),
-    radial-gradient(46% 40% at 22% 78%, rgba(56, 116, 232, 0.12) 0%, transparent 72%),
-    #000;
+  background: #000;
   color: var(--text);
 }
 .contact-glow { display: none; }

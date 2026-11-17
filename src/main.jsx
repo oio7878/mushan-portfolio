@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import './extra.css'
-import './theme-light.css'
+// 风格主题层：theme-light.css（亮色） / theme-apple.css（Apple 深色）
+import './theme-apple.css'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -22,8 +23,8 @@ class ErrorBoundary extends React.Component {
         <div
           style={{
             minHeight: '100vh',
-            background: '#f7f7fb',
-            color: '#16181f',
+            background: '#050506',
+            color: '#f5f5f7',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -31,10 +32,10 @@ class ErrorBoundary extends React.Component {
           }}
         >
           <div style={{ textAlign: 'center' }}>
-            <div style={{ color: '#16181f', fontSize: 22, fontWeight: 600, letterSpacing: '0.2em' }}>
+            <div style={{ color: '#f5f5f7', fontSize: 22, fontWeight: 600, letterSpacing: '0.2em' }}>
               MUSHAN DESIGN
             </div>
-            <p style={{ marginTop: 14, color: '#5b5e6b' }}>
+            <p style={{ marginTop: 14, color: '#a1a1a6' }}>
               页面加载出错，请刷新重试。若持续出现，请告诉我具体现象。
             </p>
           </div>

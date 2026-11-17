@@ -1,42 +1,40 @@
-import { useState } from 'react'
 import { projects, extraProjects, srcSetOf } from '../data.js'
+import galleryMap from '../gallery.json'
 import useReveal from '../useReveal.js'
-import ProjectModal from './ProjectModal.jsx'
+import { SplitText } from './SplitText.jsx'
 
 const allProjects = [...projects, ...extraProjects]
 
-function WorkCard({ p, delay, onOpen }) {
+function WorkStory({ p, delay }) {
+  const gallery = galleryMap[p.id] || []
+  // 主图 + 详情图，全部直接铺在页面上，不再有点击弹窗
+  const images = [p.img, ...gallery]
+
   return (
-    <article
-      className={`work-card reveal-clip ${p.wide ? 'wide' : ''}`}
-      style={{ '--d': `${delay}s` }}
-      onClick={() => onOpen(p)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onOpen(p)}
-    >
-      <div className="work-media">
-        <span className="work-index">{p.index}</span>
-        <span className="work-tag">{p.tagEn}</span>
-        <img
-          src={p.img}
-          srcSet={srcSetOf(p.img)}
-          sizes="(max-width: 768px) 100vw, 1200px"
-          alt={p.title}
-          loading="lazy"
-          decoding="async"
-        />
-        <span className="work-hint">查看案例 ↗</span>
-      </div>
-      <div className="work-body">
-        <div>
-          <div className="mono" style={{ fontSize: 11, color: 'var(--dim)', letterSpacing: '.2em' }}>
-            {p.tag}
-          </div>
-          <h3 className="work-title" style={{ marginTop: 10 }}>{p.title}</h3>
-          <p className="work-desc">{p.desc}</p>
+    <article className={`work-story reveal ${p.wide ? 'wide' : ''}`} style={{ '--d': `${delay}s` }}>
+      <div className="story-head">
+        <div className="story-meta">
+          <span className="story-index">({p.index})</span>
+          <span className="story-tag">{p.tagEn} / {p.tag}</span>
         </div>
-        <div className="work-arrow" aria-hidden="true">↗</div>
+        <h3 className="story-title"><SplitText text={p.title} /></h3>
+        <p className="story-desc">{p.desc}</p>
+      </div>
+
+      <div className="story-gallery">
+        {images.map((img, i) => (
+          <figure className="story-shot" key={`${img}-${i}`}>
+            <img
+              src={img}
+              srcSet={srcSetOf(img)}
+              sizes="(max-width: 768px) 100vw, 1200px"
+              alt={`${p.title} ${i === 0 ? '' : i}`}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption className="story-num">({String(i + 1).padStart(2, '0')})</figcaption>
+          </figure>
+        ))}
       </div>
     </article>
   )
@@ -44,7 +42,6 @@ function WorkCard({ p, delay, onOpen }) {
 
 export default function Works() {
   const ref = useReveal()
-  const [active, setActive] = useState(null)
 
   return (
     <section className="section" id="works" ref={ref}>
@@ -61,13 +58,12 @@ export default function Works() {
           </div>
           <p className="reveal" style={{ '--d': '.2s' }}>
             每一个案例都始于对商业问题的理解，终于被消费者看见的现场。
-            点击任意卡片，查看完整案例细节。
           </p>
         </div>
 
-        <div className="works-grid">
+        <div className="works-stories">
           {allProjects.map((p, i) => (
-            <WorkCard key={p.id} p={p} delay={(i % 2) * 0.12} onOpen={setActive} />
+            <WorkStory key={p.id} p={p} delay={(i % 3) * 0.1} />
           ))}
         </div>
 
@@ -77,8 +73,6 @@ export default function Works() {
           </span>
         </div>
       </div>
-
-      {active && <ProjectModal project={active} onClose={() => setActive(null)} />}
     </section>
   )
 }

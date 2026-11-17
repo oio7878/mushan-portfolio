@@ -240,6 +240,105 @@ body::before { display: none !important; }
 .section-head p { color: var(--muted); }
 .works-foot { color: var(--dim); }
 
+/* ---------- 作品区：编辑排版式，去掉详情页，内容直接铺出 ---------- */
+.works-stories { display: flex; flex-direction: column; gap: clamp(88px, 11vw, 168px); }
+.work-story {
+  position: relative;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.work-story.in { opacity: 1; transform: none; }
+.story-head {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.6fr);
+  gap: 24px 48px;
+  align-items: start;
+  margin-bottom: 42px;
+}
+.story-meta { display: flex; flex-direction: column; gap: 10px; padding-top: 8px; }
+.story-index {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: #6e6e73;
+  letter-spacing: 0.08em;
+}
+.story-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: #8a8a90;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.story-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.6vw, 56px);
+  font-weight: 650;
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  color: #f5f5f7;
+}
+/* 标题里的灰白混排：主名粗白，冒号后说明细灰 */
+.story-title .ch { color: #f5f5f7; }
+.story-desc {
+  grid-column: 2;
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #a1a1a6;
+}
+/* 图片错落铺排：主图大，其余小图错落，参考 Statement 的拼贴 */
+.story-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.story-shot { position: relative; overflow: hidden; border-radius: 6px; background: #0d0d10; }
+.story-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s;
+  filter: brightness(0.94);
+}
+.story-shot:hover img { transform: scale(1.03); filter: brightness(1); }
+.story-shot:nth-child(1) { grid-column: span 7; aspect-ratio: 16 / 10; }
+.story-shot:nth-child(2) { grid-column: span 5; aspect-ratio: 4 / 3; margin-top: 40px; }
+.story-shot:nth-child(3) { grid-column: span 4; aspect-ratio: 1; }
+.story-shot:nth-child(4) { grid-column: span 5; aspect-ratio: 4 / 3; margin-top: 28px; }
+.story-shot:nth-child(5) { grid-column: span 3; aspect-ratio: 3 / 4; }
+.story-shot:nth-child(6) { grid-column: span 12; aspect-ratio: 21 / 8; }
+.story-num {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+/* 只有主图时占满 */
+.story-gallery:has(.story-shot:only-child) .story-shot { grid-column: span 12; aspect-ratio: 16 / 8; }
+
+@media (max-width: 768px) {
+  .story-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 28px; }
+  .story-desc { grid-column: 1; font-size: 14px; }
+  .story-title { font-size: clamp(28px, 7.4vw, 40px); }
+  .story-gallery { gap: 12px; }
+  .story-shot:nth-child(1) { grid-column: span 12; aspect-ratio: 16 / 10; margin-top: 0; }
+  .story-shot:nth-child(2) { grid-column: span 6; aspect-ratio: 1; margin-top: 0; }
+  .story-shot:nth-child(3) { grid-column: span 6; aspect-ratio: 1; }
+  .story-shot:nth-child(4) { grid-column: span 12; aspect-ratio: 16 / 10; margin-top: 0; }
+  .story-shot:nth-child(5) { grid-column: span 6; aspect-ratio: 1; }
+  .story-shot:nth-child(6) { grid-column: span 12; aspect-ratio: 16 / 10; }
+}
+
 /* ---------- 去卡片化：内容直接坐在黑底上，靠排版与细线呈现 ---------- */
 .work-card, .member, .cap, .stat, .value, .pstep, .logo-card,
 .stats, .process-steps, .values {

@@ -9,7 +9,6 @@ export default function Contact() {
     <section className="contact" id="contact" ref={ref}>
       <div className="contact-glow" />
       <div className="container contact-inner">
-        <div className="contact-label reveal">GET IN TOUCH — 05 / CONTACT</div>
         <h2 className="contact-title">
           <span className="reveal" style={{ '--d': '.1s', display: 'block' }}>
             <SplitText text="下一个项目，" />

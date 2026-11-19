@@ -9,9 +9,6 @@ export default function Strengths() {
       <div className="container">
         <div className="section-head">
           <div>
-            <div className="section-label reveal">
-              <span className="idx">04</span> WHAT WE DO — 团队优势
-            </div>
             <h2 className="section-title reveal" style={{ '--d': '.1s' }}>
               五大板块，一条完整链路
               <span className="en">Capabilities</span>
@@ -25,7 +22,6 @@ export default function Strengths() {
         <div className="caps">
           {capabilities.map((c, i) => (
             <div className="cap reveal" key={c.num} style={{ '--d': `${i * 0.08}s` }}>
-              <div className="cap-num">{c.num}</div>
               <div className="cap-title">{c.title}</div>
               <div className="cap-en">{c.en}</div>
               <ul className="cap-list">

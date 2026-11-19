@@ -9,9 +9,6 @@ export default function LogoSection() {
       <div className="container">
         <div className="section-head">
           <div>
-            <div className="section-label reveal">
-              <span className="idx">03</span> LOGO — 标志设计
-            </div>
             <h2 className="section-title reveal" style={{ '--d': '.1s' }}>
               品牌标志合集
               <span className="en">Logo &amp; Brand Marks</span>

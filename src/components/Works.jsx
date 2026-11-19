@@ -13,10 +13,6 @@ function WorkStory({ p, delay }) {
   return (
     <article className={`work-story reveal ${p.wide ? 'wide' : ''}`} style={{ '--d': `${delay}s` }}>
       <div className="story-head">
-        <div className="story-meta">
-          <span className="story-index">({p.index})</span>
-          <span className="story-tag">{p.tagEn} / {p.tag}</span>
-        </div>
         <h3 className="story-title"><SplitText text={p.title} /></h3>
         <p className="story-desc">{p.desc}</p>
       </div>
@@ -32,7 +28,6 @@ function WorkStory({ p, delay }) {
               loading="lazy"
               decoding="async"
             />
-            <figcaption className="story-num">({String(i + 1).padStart(2, '0')})</figcaption>
           </figure>
         ))}
       </div>
@@ -48,9 +43,6 @@ export default function Works() {
       <div className="container">
         <div className="section-head">
           <div>
-            <div className="section-label reveal">
-              <span className="idx">02</span> SELECTED WORKS — 精选作品
-            </div>
             <h2 className="section-title reveal" style={{ '--d': '.1s' }}>
               从品牌符号到货架现场
               <span className="en">Selected Projects</span>

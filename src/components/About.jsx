@@ -8,9 +8,6 @@ export default function About() {
   return (
     <section className="section" id="about" ref={ref}>
       <div className="container">
-        <div className="section-label reveal">
-          <span className="idx">01</span> TEAM & EXPERIENCE — 团队经历
-        </div>
         <h2 className="section-title reveal" style={{ '--d': '.1s' }}>
           <SplitText text="小而美，但每个项目都全力以赴" />
           <span className="en">A Small &amp; Beautiful Team</span>

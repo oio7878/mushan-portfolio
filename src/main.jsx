@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import './extra.css'
-// 风格主题层：theme-light.css（亮色） / theme-apple.css（Apple 深色）
-import './theme-apple.css'
+// 风格主题层：theme-plugin.css（插件审美，当前） / theme-apple.css（灰白混排） / theme-light.css（亮色）
+import './theme-plugin.css'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {

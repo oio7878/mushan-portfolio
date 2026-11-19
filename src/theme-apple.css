@@ -128,7 +128,7 @@ body::before { display: none !important; }
   margin-bottom: clamp(36px, 6vh, 68px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.16em;
   color: #86868b;
@@ -151,9 +151,9 @@ body::before { display: none !important; }
 .hero-bleed {
   position: absolute;
   left: 50%;
-  bottom: -0.30em;
+  bottom: -0.42em;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 0;
   font-family: var(--font-display);
   font-size: clamp(150px, 27vw, 440px);
   font-weight: 800;
@@ -190,9 +190,9 @@ body::before { display: none !important; }
   font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
-  box-shadow: 0 10px 34px rgba(255, 255, 255, 0.14);
+  box-shadow: none;
 }
-.btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(255, 255, 255, 0.22); }
+.btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: none; }
 .btn-ghost {
   background: rgba(255, 255, 255, 0.06);
   color: #f5f5f7;
@@ -208,7 +208,18 @@ body::before { display: none !important; }
 }
 .btn-ghost:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); }
 .hero-trust { margin-top: auto; padding-top: clamp(48px, 9vh, 96px); position: relative; z-index: 2; }
-.hero-trust-label { font-size: 11px; color: #6e6e73; letter-spacing: 0.14em; }
+.hero-trust-label { font-size: 12px; color: #6e6e73; letter-spacing: 0.14em; }
+/* 客户名压在出血字上会糊，用黑底渐隐把它们隔开 */
+.hero-trust::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: -30px; bottom: -10px;
+  width: min(1100px, 100vw);
+  transform: translateX(-50%);
+  background: radial-gradient(60% 70% at 50% 45%, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0) 78%);
+  z-index: -1;
+  pointer-events: none;
+}
 .hero-clients {
   display: flex;
   flex-wrap: wrap;
@@ -268,7 +279,7 @@ body::before { display: none !important; }
 }
 .story-tag {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 12px;
   color: #8a8a90;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -318,7 +329,7 @@ body::before { display: none !important; }
   right: 12px;
   bottom: 10px;
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.08em;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
@@ -370,6 +381,14 @@ body::before { display: none !important; }
 .work-hint { background: none; color: #8a8a90; border-radius: 0; }
 .work-arrow { color: var(--text); border-color: var(--line); }
 .member-photo::after, .cap::after, .value::after { background: none; }
+/* 成员区：6 列会把姓名和角色压成窄条，改 3 列让排版呼吸 */
+.members { grid-template-columns: repeat(3, 1fr); gap: 30px 32px; }
+.member-info { padding: 16px 0 0; }
+.member-name { font-size: 18px; line-height: 1.35; }
+.member-name .en { font-size: 12px; color: #6e6e73; margin-left: 8px; }
+.member-role { margin-top: 6px; font-size: 12px; line-height: 1.6; }
+/* 能力列表：把小方块圆点换成规整的细短线 */
+.cap-list li::before { width: 5px; height: 1px; opacity: 0.6; }
 .logo-img { background: none; }
 .logo-name .cn { color: var(--text); }
 .logo-name .en { color: var(--dim); }
@@ -384,7 +403,7 @@ body::before { display: none !important; }
   padding: 26px 0 0 !important;
   clip-path: none !important;
 }
-.contact-row .k { color: #6e6e73; letter-spacing: 0.12em; font-size: 11px; }
+.contact-row .k { color: #6e6e73; letter-spacing: 0.12em; font-size: 12px; }
 .contact-row .v { color: #e8e8ed; }
 
 /* 细线分隔：替代原来的卡片边框，只在区块之间保留极细线 */
@@ -416,6 +435,11 @@ body::before { display: none !important; }
   font-weight: 600;
   text-transform: none;
   letter-spacing: -0.03em;
+}
+/* 上一主题的描边空心字与灰白混排冲突，改成实心细灰 */
+.contact-title .stroke {
+  color: #6e6e73;
+  -webkit-text-stroke: 0;
 }
 .btn-mail {
   background: #f5f5f7;
@@ -463,7 +487,7 @@ body::before { display: none !important; }
 /* ---------- 移动端 ---------- */
 @media (max-width: 768px) {
   .hero-content { padding-top: 92px; padding-bottom: 28px; }
-  .hero-eyebrow { margin-bottom: 40px; font-size: 10px; letter-spacing: 0.12em; }
+  .hero-eyebrow { margin-bottom: 40px; font-size: 12px; letter-spacing: 0.12em; }
   .hero-title { font-size: clamp(38px, 10vw, 58px); letter-spacing: -0.04em; }
   .desktop-br { display: none; }
   .hero-lede { font-size: 14px; margin-top: 22px; line-height: 1.85; }
@@ -475,3 +499,8 @@ body::before { display: none !important; }
   .section-title { font-size: clamp(32px, 8vw, 46px); }
   .modal-panel { border-radius: 0; border: none; }
 }
+
+/* 可读性底线：所有标签 ≥12px（skill 体检项），统一兜底原 CSS 的小字号 */
+.nav-links a .n, .logo-name .en, .cap-en, .value-title .en, .ci .k,
+.section-label, .member-role, .work-hint, .work-index, .work-tag,
+.hero-tag, .hero-meta, .cap-num { font-size: 12px; }
